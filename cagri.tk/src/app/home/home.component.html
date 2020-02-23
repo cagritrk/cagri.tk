@@ -1,0 +1,27 @@
+<div class="card">
+  <div class="card-header">
+    About this page
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">This page using Angular !</h5>
+    <p class="card-text">I made this wepsite using Angular 8 and Docker.</p>
+
+    <h5 class="card-title">That's the Dockerfile</h5>
+    <pre>
+        <code>
+# stage 1
+FROM node:latest as node
+WORKDIR /app
+COPY . .
+RUN npm install
+RUN npm run build —- —-prod
+
+
+# stage 2
+FROM nginx:alpine
+COPY --from=node /app/dist/cagri.tk /usr/share/nginx/html
+        </code>
+    </pre>
+    <a href="https://github.com/cagritrk/cagri.tk" class="btn btn-primary">Go to repo of this website.</a>
+  </div>
+</div>
