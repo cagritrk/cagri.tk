@@ -7,7 +7,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ##### Creating image from Dockerfile
 
 You can also use Docker to run this project. The Docker file is under `cagri.tk` folder.
-Clik [here](!https://github.com/cagritrk/cagri.tk/blob/master/cagri.tk/Dockerfile) to see Dokerfile.
+Clik [here](https://github.com/cagritrk/cagri.tk/blob/master/cagri.tk/Dockerfile) to see Dokerfile.
 
 ##### Using Docker Hub 
 
