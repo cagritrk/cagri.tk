@@ -1,27 +1,35 @@
+<!-- Navbar -->
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="http://www.cagri.tk/">Cagri TURK</a>
+
+    <ul class="nav justify-content-end">
+        <li *ngFor = "let item of menuItems" class="nav-item">
+            <a class="{{item.class}}" href="{{item.href}}" target="{{item.target}}" (click)="setActivePage(item.name)">{{item.name}}</a>
+        </li>
+      </ul>
+</nav> 
 <div class="container">
     <div class="row">
-        <div class="col-4">
-            <div class="card" style="width: 24rem;">
+        <div class="col-12 col-md-10">
+            <app-home *ngIf="activePage=='Home'"></app-home>
+            <app-home *ngIf="activePage=='GitHub'"></app-home>
+            <app-home *ngIf="activePage=='About'"></app-home>
+        </div>
+        <div class="col-12 col-md-2">
+            <div class="card" style="width: 24rem; margin-top: 4pt">
                 <img class="card-img-top" src="https://avatars1.githubusercontent.com/u/16518350?s=400&v=4" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title">Çağrı TÜRK </h5>
                   <p class="card-text">Software Developer</p>
                   <div>
                       <ul class="social-network social-circle">
-                        <li><a href="https://github.com/cagritrk" class="icoGitHub" title="Github"><i class="fa fa-github"></i></a></li>
-                        <li><a href="https://linkedin.com/in/cagriturk" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="https://github.com/cagritrk" target= "_blank" class="icoGitHub" title="Github"><i class="fa fa-github"></i></a></li>
+                        <li><a href="https://linkedin.com/in/cagriturk" target= "_blank" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
                       </ul>
                     </div>
                 </div>
               </div>
         </div>
-        <div class="col-8">
-            <app-home></app-home>
-        </div>
+
       </div>
   </div>
-
-  
-
-
-<router-outlet></router-outlet>
