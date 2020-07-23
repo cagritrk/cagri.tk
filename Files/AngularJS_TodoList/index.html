@@ -1,0 +1,41 @@
+<!doctype html>
+<html ng-app="todoApp">
+  <head>
+    <script src="angular.min.js"></script>
+    <script src="todo.js"></script>
+	<link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="todo.css">
+  </head>
+  <body>
+	<div class="card container">
+		<div class="card-body">
+			<h2>Todo List</h2>
+			<div ng-controller="TodoListController as todoList">
+				<span>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span>
+				<ul class="list-group">
+					<li class="list-group-item" ng-repeat="todo in todoList.todos">
+						<label class="checkbox">
+							<input type="checkbox" ng-model="todo.done">
+							<span class="done-{{todo.done}}">{{todo.text}}</span>
+							[ <a href="" ng-click="todoList.deleteRow(todo)">delete</a> ]
+						</label>
+					</li>
+				</ul>
+				
+				<form ng-submit="todoList.addTodo()">
+					<div class="input-group mb-3">
+						<input type="text" class="form-control" ng-model="todoList.todoText" placeholder="add new todo here" aria-label="Recipient's username" aria-describedby="button-addon2" minlength="3">
+						<div class="input-group-append">
+							<button class="btn btn-outline-secondary" id="button-addon2" type="submit" value="add" >Add</button>
+						</div>
+					</div>
+				
+				</form>
+				<a href="#" class="card-link" ng-click="todoList.archive()">Delete All Completed</a>
+				<a href="#" class="card-link" ng-click="todoList.deleteAll()">Delete All</a>
+				<a href="{{todoList.downloadFile()}}" class="card-link" download="To Do List.txt">Download as a text file</a>
+			</div>
+		</div>
+    </div>
+  </body>
+</html>

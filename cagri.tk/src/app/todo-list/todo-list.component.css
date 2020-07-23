@@ -1,0 +1,12 @@
+.done-true {
+    text-decoration: line-through;
+    color: grey;
+  }
+  
+  .list-group {
+      margin-bottom: 4px;
+  }
+  
+  .card {
+      margin-top: 5%;
+  }

@@ -1,0 +1,35 @@
+<div class="card">
+    <div class="card-header">
+        Todo List App
+    </div>
+    <div class="card-body">
+        <h2>Todo List</h2>
+        <div>
+            <span>{{remaining()}} of {{todos.length}} remaining</span>
+    
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let todo of todos">
+                    <input type="checkbox" [(ngModel)] = 'todo.done'>
+                    <span class="done-{{todo.done}}"> {{todo.text}}</span>
+                    [ <a (click)="deleteRow(todo)">delete</a> ]
+                </li>
+            </ul>
+            
+            <form (ngSubmit)="addTodo(newTodo.value); newTodo.value = '';" >
+                <div class="input-group">
+                    <input #newTodo type="text" class="form-control" placeholder="add new todo here" minlength="3">
+                </div>
+           </form>
+        </div>
+        
+    </div>
+    <div class="card-body">
+        <a href="#" class="card-link" (click)="archive()">Delete All Completed</a>
+        <a href="#" class="card-link" (click)="deleteAll()">Delete All</a>
+        <a href="#" [href]="downloadFile()" class="card-link e2e-trusted-url" download="To Do List.txt">Download as a text file</a>
+    </div>
+    <div class="card-body">
+        <a type="button" class="btn btn-primary" href="/Files/index.html">I also create AngularJS version of this project. Click here if you want to see</a>
+    </div>
+    
+</div>
